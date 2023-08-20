@@ -1,18 +1,21 @@
 class ContaBancaria:
     def __init__(self):
-        self.saldo = 1000.00
-        self.extrato = []
+        self.saldo = 1000.00  # Saldo inicial da conta
+        self.extrato = []  # Lista para armazenar as operações no extrato
 
-    def operacao(self, tipo, valor):
-        operacao_tuple = (tipo, valor, self.saldo)
+    def operacao(self, tipo_operacao, valor):
+        # Registra uma operação no extrato
+        operacao_tuple = (tipo_operacao, valor, self.saldo)
         self.extrato.append(operacao_tuple)
 
     def depositar(self, valor):
+        # Deposita um valor na conta e registra a operação
         self.saldo += valor
         self.operacao('deposito', valor)
 
     def sacar(self, valor):
         if valor <= self.saldo:
+            # Realiza um saque da conta e registra a operação
             self.saldo -= valor
             self.operacao('saque', valor * -1)
         else:
