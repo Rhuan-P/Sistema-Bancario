@@ -1,6 +1,6 @@
 class ContaBancaria:
     def __init__(self):
-        self.saldo = 1000.00  # Saldo inicial da conta
+        self.saldo = 0.00  # Saldo inicial da conta
         self.extrato = []  # Lista para armazenar as operações no extrato
 
     def operacao(self, tipo_operacao, valor):
@@ -33,9 +33,7 @@ class ContaBancaria:
         print("\n Saldo atual: {:.2f}".format(self.saldo))
 
 
-def interface():
-    conta = ContaBancaria()
-
+def interface(conta):
     while True:
         print("Selecione uma opção:")
         print("1 - Depositar")
@@ -54,6 +52,73 @@ def interface():
         elif opcao == "3":
             conta.mostrar_extrato()
         elif opcao == "4":
+            return
+        else:
+            print("Opção inválida. Tente novamente.")
+
+    print("Encerrando a aplicação.")
+
+
+class Usuario:
+    def __init__(self, cpf, nome, tel, senha):
+        self.cpf = cpf
+        self.nome = nome
+        self.tel = tel
+        self.senha = senha
+        self.conta = ContaBancaria()
+
+    def verificar_senha(self, senha):
+        return senha == self.senha
+
+
+def criar_usuario():
+    cpf = input("Digite o CPF do usuário: ")
+    nome = input("Digite o nome do usuário: ")
+    tel = input("Digite o telefone do usuário: ")
+    senha = input("Digite a senha do usuário: ")
+    return Usuario(cpf, nome, tel, senha)
+
+
+def interface_user():
+    usuarios = []
+
+    while True:
+        print("Selecione uma opção:")
+        print("1 - Acessar conta")
+        print("2 - Criar conta")
+        print("3 - Sair")
+
+        opcao = input("Opção: ")
+
+        if opcao == "1":
+            if not usuarios:
+                print("Nenhum usuário cadastrado. Crie uma conta primeiro.")
+            else:
+                cpf = input("Digite o CPF do usuário: ")
+                senha = input("Digite a senha do usuário: ")
+                for usuario in usuarios:
+                    if usuario.cpf == cpf:
+                        if usuario.verificar_senha(senha):
+                            interface(usuario.conta)
+                            break
+                        else:
+                            print("Senha incorreta.")
+                            break
+                else:
+                    print("Usuário não encontrado.")
+                    continue
+
+        elif opcao == "2":
+            cpf = input("Digite o CPF do usuário: ")
+            for usuario in usuarios:
+                if usuario.cpf == cpf:
+                    print("Usuário já existe.")
+                    break
+            else:
+                usuario = criar_usuario()
+                usuarios.append(usuario)
+                print("Usuário criado com sucesso!")
+        elif opcao == "3":
             break
         else:
             print("Opção inválida. Tente novamente.")
@@ -61,4 +126,4 @@ def interface():
     print("Encerrando a aplicação.")
 
 
-interface()
+interface_user()
