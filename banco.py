@@ -1,6 +1,6 @@
 class ContaBancaria:
     def __init__(self):
-        self.saldo = 0.00  # Saldo inicial da conta
+        self.saldo = 1000.00  # Saldo inicial da conta
         self.extrato = []  # Lista para armazenar as operações no extrato
 
     def operacao(self, tipo_operacao, valor):
