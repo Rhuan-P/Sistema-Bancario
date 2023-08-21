@@ -1,6 +1,6 @@
 class ContaBancaria:
     def __init__(self):
-        self.saldo = 1000.00  # Saldo inicial da conta
+        self.saldo = 00.00  # Saldo inicial da conta
         self.extrato = []  # Lista para armazenar as operações no extrato
 
     def operacao(self, tipo_operacao, valor):
@@ -71,8 +71,8 @@ class Usuario:
         return senha == self.senha
 
 
-def criar_usuario():
-    cpf = input("Digite o CPF do usuário: ")
+def criar_usuario(cpf):
+
     nome = input("Digite o nome do usuário: ")
     tel = input("Digite o telefone do usuário: ")
     senha = input("Digite a senha do usuário: ")
@@ -110,12 +110,13 @@ def interface_user():
 
         elif opcao == "2":
             cpf = input("Digite o CPF do usuário: ")
+            
             for usuario in usuarios:
                 if usuario.cpf == cpf:
                     print("Usuário já existe.")
                     break
             else:
-                usuario = criar_usuario()
+                usuario = criar_usuario(cpf)
                 usuarios.append(usuario)
                 print("Usuário criado com sucesso!")
         elif opcao == "3":
