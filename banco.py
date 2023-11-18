@@ -32,7 +32,6 @@ class ContaBancaria:
                 print("{:<12} {:<12.2f} {:.2f}".format("Saque", valor * -1, saldo))
         print("\n Saldo atual: {:.2f}".format(self.saldo))
 
-
 def interface(conta):
     while True:
         print("Selecione uma opção:")
@@ -58,7 +57,6 @@ def interface(conta):
 
     print("Encerrando a aplicação.")
 
-
 class Usuario:
     def __init__(self, cpf, nome, tel, senha):
         self.cpf = cpf
@@ -70,14 +68,12 @@ class Usuario:
     def verificar_senha(self, senha):
         return senha == self.senha
 
-
 def criar_usuario(cpf):
 
     nome = input("Digite o nome do usuário: ")
     tel = input("Digite o telefone do usuário: ")
     senha = input("Digite a senha do usuário: ")
     return Usuario(cpf, nome, tel, senha)
-
 
 def interface_user():
     usuarios = []
@@ -125,6 +121,5 @@ def interface_user():
             print("Opção inválida. Tente novamente.")
 
     print("Encerrando a aplicação.")
-
 
 interface_user()
