@@ -1,28 +1,26 @@
-from User_List import *
+from Account import *
 
-class PF:
-    def __init__(self, nome, cpf, data_nasc):
-        self.NOME = nome
-        self.__CPF = cpf
-        self.DATA_NASC = data_nasc
-        self.id = int( User_List.add_List(self))
-
-class Cliente(PF):
+class User:
+    def __init__(self, nome,dif, data_nasc):
+        self.nome = nome
+        self.dif = dif
+        self.data_nasc = data_nasc
         
-    def __init__(self, cpf, **kw ):
+
+class PF(User):
+    def __init__(self,**kw ):
         super().__init__(**kw)
-        self.cpf = cpf
+        
+
+class PJ(User):
+    def __init__(self, **kw ):
+        super().__init__(**kw)
 
 
-p1=PF('alex',1,1)
-
-print(User_List.show(0))
-print(User_List.list_dict(0))
+        
 
 
 
 
 
-list[
-    0x000002186C09A7B0, 0x100102186C09A7B0
-]
+

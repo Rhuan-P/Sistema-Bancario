@@ -1,23 +1,23 @@
-List = []
-
-List_dict = {}
-class User_List:
-  
-    def add_List(user):
-        List.append(user.__dict__)
-        id = len(List) - 1
-
-        List_dict.update({id:List[id]})
+from User import *
+from Account import *
+List = []    
 
 
 
-        return id
 
-    def show(id):
-        return List[id]
-    
-    def list_dict(id):
-        return List_dict[id]
-    
+class Cliente:
+    def __init__(self,nome,dif,data_nasc):
+        self.dif = dif
+        self.data_nasc = data_nasc
+        self.nome = nome
+        self.User = PF(nome=nome, dif = dif, data_nasc = data_nasc)
+        self.Conta = conta()   
+        List.append(self)
+      
 
+
+def login(dif):
+    #login = filter(lambda cliente:cliente.dif == dif, List)
+    acess = list(filter(lambda cliente:cliente.dif == dif, List))[0]
+    return acess
 
