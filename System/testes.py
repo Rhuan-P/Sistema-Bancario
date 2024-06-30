@@ -6,6 +6,10 @@ jao = Cliente('João','123.456.789-00', '01/01/1980')
 maria = Cliente('Maria', '987.654.321-00', '15/06/1990')
 pedro = Cliente('Pedro', '111.222.333-44', '10/03/1975')
 
+jao.Conta.depositar(100)
+
+
+
 print(login('987.654.321-00').nome)
 
 

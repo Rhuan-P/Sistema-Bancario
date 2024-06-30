@@ -3,6 +3,8 @@ class ContaBancaria:
         self.saldo = 00.00  # Saldo inicial da conta
         self.extrato = []  # Lista para armazenar as operações no extrato
 
+   
+
     def operacao(self, tipo_operacao, valor):
         # Registra uma operação no extrato
         operacao_tuple = (tipo_operacao, valor, self.saldo)
