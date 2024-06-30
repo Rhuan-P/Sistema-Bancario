@@ -15,9 +15,9 @@ class Cliente:
         List.append(self)
       
 
-
+#TODO move to Menu.py
 def login(dif):
     #login = filter(lambda cliente:cliente.dif == dif, List)
     acess = list(filter(lambda cliente:cliente.dif == dif, List))[0]
     return acess
-
+    #TODO return obj
