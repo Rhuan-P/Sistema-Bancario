@@ -1,3 +1,7 @@
+'''
+conceito do relacionamento
+
+
 
 class banco:
     lista_clientes = [cliente1, cliente2]
@@ -22,3 +26,5 @@ class cliente:
 class interface:
     self.cpf = cliente1.User.cpf
     self.saldo = cliente1.conta.saldo
+
+    '''
