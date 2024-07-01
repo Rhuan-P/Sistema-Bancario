@@ -8,13 +8,11 @@ class conta:
         self.extrato.append(operacao_tupla)
 
     def depositar(self,valor):
-        print(self.saldo)
         self.saldo += valor
-        print(self.saldo)
         self.add_extrato('Deposito', valor)
     
     def sacar(self,valor):
-        print(self.saldo)
+      
 
         if valor > 0:
             if valor <= self.saldo:
@@ -28,7 +26,7 @@ class conta:
         else: print('valor invalido')
 
     def mostrar_extrato(self):
-        print(self.extrato)
+        
         return self.extrato
         
         
