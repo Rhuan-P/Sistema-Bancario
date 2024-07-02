@@ -25,9 +25,9 @@ class conta:
                 self.add_extrato('Saque', valor)
         else: print('valor invalido')
 
-    def mostrar_extrato(self):
+    def mostrar(self):
         
-        return self.extrato
+        return self.extrato, self.saldo
         
         
 

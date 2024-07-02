@@ -6,22 +6,23 @@ class User:
         self.dif = dif
         self.data_nasc = data_nasc
         
-    def Criar_user(self, tipo, **kw):
-        super().__init__(**kw)
+    def Criar_user(tipo, **kw):
         if tipo.upper() == 'PF':
-            PF(**kw)
+            return PF(**kw)
         elif tipo.upper() == 'PJ':
-            PJ(**kw)
+            return PJ(**kw)
 
 class PF(User):
     def __init__(self,**kw ):
         super().__init__(**kw)
-        
+    def mostrar(self):
+        print('PF')
 
 class PJ(User):
     def __init__(self, **kw ):
         super().__init__(**kw)
-
+    def mostrar(self):
+        print('Pj')
 
         
 
