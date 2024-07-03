@@ -1,13 +1,13 @@
-from User import *
-from Account import *
+from Modelo import User
+from Modelo import Account
 List = []    
 
 class Cliente:
     def __init__(self,tipo,nome,dif,data_nasc):
         self.dif = dif
         self.data_nasc = data_nasc
-        self.User = User.Criar_user(tipo=tipo,nome=nome, dif = dif, data_nasc = data_nasc)
-        self.Conta = conta()   
+        self.User = User.PF(nome=nome, tipo=tipo, dif = dif, data_nasc = data_nasc)
+        self.Conta = Account.conta()   
         List.append(self)
 
 #TODO move to Menu.py
