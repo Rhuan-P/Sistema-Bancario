@@ -3,11 +3,11 @@ conceito do relacionamento
 
 class Cliente:
     
-    def __init__(self, nome, tipo, dif, data_nasc)
+    def __init__(self, nome, tipo, doc, data_nasc)
 
     id
     self.senha
-    self.user = User.pf//pj(nome=nome, tipo=tipo,dif=dif)
+    self.user = User.pf//pj(nome=nome, tipo=tipo,doc=doc)
     self.conta = Conta()
 
 Cliente('jao')  = 000000x2730, 0002x00123
@@ -33,6 +33,12 @@ class User(self,nome,cpf):
 class Conta:
     self.saldo = 00
 
+
+def login(doc):
+    #login = filter(lambda cliente:cliente.doc == doc, List)
+    acess = list(filter(lambda cliente:cliente.doc == doc, List))[0]
+    return acess
+    #TODO return obj
 
 
 

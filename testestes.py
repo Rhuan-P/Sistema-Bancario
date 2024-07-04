@@ -1,15 +1,9 @@
-preco = input('preco: ')
-no_bolso = input('no bolso: ')
+from app.Modelo.banco import Banco
 
-if preco <= no_bolso:
-    print('consigo comprar')
+Satander = Banco()
+Bradesco = Banco()
 
-else:
-    print('nao consigo comprar')
-
-
-
-
+Satander.Ciar_Cliente(nome='Juli',tipo='PJ',doc='06042022')
 
 
 

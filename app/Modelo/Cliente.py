@@ -1,20 +1,14 @@
-from Modelo import User
-from Modelo import Account
-List = []    
+from .user import PF, PJ
+from .account import Conta
+
 
 class Cliente:
-    def __init__(self,tipo,nome,dif,data_nasc):
-        self.dif = dif
-        self.data_nasc = data_nasc
-        self.User = User.PF(nome=nome, tipo=tipo, dif = dif, data_nasc = data_nasc)
-        self.Conta = Account.conta()   
-        List.append(self)
-
-#TODO PJ, PF call
-
-#TODO move to Menu.py
-def login(dif):
-    #login = filter(lambda cliente:cliente.dif == dif, List)
-    acess = list(filter(lambda cliente:cliente.dif == dif, List))[0]
-    return acess
-    #TODO return obj
+    def __init__(self, nome, tipo, doc, data_nasc):
+        self.doc = doc
+        self.data_dasc = data_nasc
+        self.user = (
+            PF(nome=nome, doc=doc, data_nasc=data_nasc)
+            if tipo.upper() == "PF"
+            else PJ(nome=nome, doc=doc, data_nasc=data_nasc)
+        )
+        self.conta = Conta()

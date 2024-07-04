@@ -1,34 +1,30 @@
-class conta:
+class Conta:
     def __init__(self):
         self.saldo = 0.00
-        self.extrato = [] 
+        self.extrato = []
 
-    def add_extrato(self,operacao,valor):
-        operacao_tupla = operacao,valor
+    def Add_Extrato(self, operacao, valor):
+        operacao_tupla = operacao, valor
         self.extrato.append(operacao_tupla)
 
-    def depositar(self,valor):
+    def Depositar(self, valor):
         self.saldo += valor
-        self.add_extrato('Deposito', valor)
-    
-    def sacar(self,valor):
-      
+        self.add_extrato("Deposito", valor)
+
+    def Sacar(self, valor):
 
         if valor > 0:
             if valor <= self.saldo:
                 self.saldo -= valor
 
             else:
-                print('sem saldo')
+                print("sem saldo")
 
                 print(self.saldo)
-                self.add_extrato('Saque', valor)
-        else: print('valor invalido')
+                self.add_extrato("Saque", valor)
+        else:
+            print("valor invalido")
 
-    def mostrar(self):
-        
+    def Mostrar(self):
+
         return self.extrato, self.saldo
-        
-        
-
-  
