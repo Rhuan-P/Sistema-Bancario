@@ -1,9 +1,9 @@
-import os
+'''import os
 import sys
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(dir_path,'..'))
-
+'''
 from Modelo import User
 jao= User.PF(nome='jao',tipo='PF',dif=123,data_nasc='10/01/1999')
 jao.mostrar()

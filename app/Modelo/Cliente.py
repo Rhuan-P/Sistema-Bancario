@@ -10,6 +10,8 @@ class Cliente:
         self.Conta = Account.conta()   
         List.append(self)
 
+#TODO PJ, PF call
+
 #TODO move to Menu.py
 def login(dif):
     #login = filter(lambda cliente:cliente.dif == dif, List)
