@@ -1,78 +1,36 @@
-# Conta Bancária
+## Introdução
+O projeto Sistema Bancário é uma aplicação simples implementada em Python, que permite a criação de contas bancárias, realização de depósitos e saques, e visualização de saldos e históricos de transações. O sistema suporta contas individuais (PF) e empresariais (PJ).
 
-Este é um código em Python que simula uma conta bancária básica.
+## Proposta
+A proposta do Sistema Bancário é oferecer uma solução prática e eficiente para gerenciamento de contas bancárias. Ele facilita a criação e o gerenciamento de contas, permitindo aos usuários realizar operações básicas de forma segura e organizada.
 
-## Funcionalidades
+## Funcionalidade
+### Menu Principal
+- **Cadastrar novo cliente:** Permite registrar um novo cliente no sistema.
+- **Acessar cliente:** Permite acessar a conta de um cliente existente.
+- **Sair:** Encerra a aplicação.
 
-- Depositar: permite que você deposite um valor na conta.
-- Sacar: permite que você faça um saque da conta, desde que haja saldo suficiente.
-- Extrato: exibe o extrato da conta, mostrando todas as operações realizadas.
-- Sair: encerra a aplicação.
+### Cadastro de Novo Cliente
+- Solicita o nome do cliente, tipo de conta (PF ou PJ), CPF ou CNPJ, e data de nascimento.
 
-## Como usar
+### Acesso à Conta do Cliente
+- Solicita o CPF ou CNPJ do cliente.
+- Após o acesso, permite realizar depósitos, saques, visualizar saldo e histórico de transações.
 
-1. Execute o código em um ambiente Python.
-2. Selecione uma opção digitando o número correspondente.
-3. Siga as instruções para cada opção selecionada.
+## Construção
+### Estrutura do Projeto
+O projeto está organizado em vários módulos:
 
-## Exemplo de uso
-Selecione uma opção:
-1 - Depositar
-2 - Sacar
-3 - Extrato
-4 - Sair
+- **app/Modelo:** Contém as classes e a lógica principal.
+  - **cliente.py:** Define a classe `Cliente`.
+  - **user.py:** Define as classes `User`, `PF`, e `PJ`.
+  - **account.py:** Define a classe `Conta`.
+  - **banco.py:** Define a classe `Banco`.
 
-Opção: 1
-Digite o valor a ser depositado: 500.00
+- **app/interface.py:** Fornece a interface de usuário para interação com o sistema.
 
-Selecione uma opção:
-1 - Depositar
-2 - Sacar
-3 - Extrato
-4 - Sair
-
-Opção: 3
-Extrato:
-Tipo         Valor        Saldo       
-Depósito     500.00       1500.00     
-
-Saldo atual: 1500.00
-
-Selecione uma opção:
-1 - Depositar
-2 - Sacar
-3 - Extrato
-4 - Sair
-
-Opção: 2
-Digite o valor a ser sacado: 200.00
-
-Selecione uma opção:
-1 - Depositar
-2 - Sacar
-3 - Extrato
-4 - Sair
-
-Opção: 3
-Extrato:
-Tipo         Valor        Saldo       
-Depósito     500.00       1500.00     
-Saque        -200.00      1300.00     
-
-Saldo atual: 1300.00
-
-Selecione uma opção:
-1 - Depositar
-2 - Sacar
-3 - Extrato
-4 - Sair
-
-Opção: 4
-Encerrando a aplicação.
-## Contribuição
-
-Sinta-se à vontade para contribuir com melhorias neste código.
-
-## Licença
-
-Este código é de domínio público.
+- **app/test:** Contém os casos de teste.
+  - **test_account.py:** Testes para a classe `Conta`.
+  - **test_banco.py:** Testes para a classe `Banco`.
+  - **test_cliente.py:** Testes para a classe `Cliente`.
+  - **test_user.py:** Testes para as classes `User`, `PF`, e `PJ`.
