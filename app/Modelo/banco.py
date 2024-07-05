@@ -7,9 +7,8 @@ class Banco:
         self.clientes = []
 
     def acessar(self, doc):
-       return next((cliente for cliente in self.clientes if cliente.doc == doc), None)
-       
-       
+        return next((cliente for cliente in self.clientes if cliente.doc == doc), None)
+
     def add_cliente(self, cliente):
         self.clientes.append(cliente)
 
@@ -18,4 +17,4 @@ class Banco:
         self.add_cliente(cliente)
 
     def __str__(self):
-        return f'{self.clientes}'
+        return f"{self.clientes}"
