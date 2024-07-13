@@ -1,0 +1,21 @@
+{
+  "name": "sistema-bancario",
+  "version": "1.0.0",
+  "description": "O projeto Sistema Bancário é uma aplicação simples implementada em Python, que permite a criação de contas bancárias, realização de depósitos e saques, e visualização de saldos e históricos de transações. O sistema suporta contas individuais (PF) e empresariais (PJ).",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm sistema-bancario/src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2"
+  }
+}
